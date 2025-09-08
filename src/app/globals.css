@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #000033; /* Dark blue background */
+  --color-foreground: #FFFFFF; /* White foreground */
+
+  --color-card: #000033;
+  --color-card-foreground: #FFFFFF;
+
+  --color-popover: #000033;
+  --color-popover-foreground: #FFFFFF;
+
+  --color-primary: #0088FF; /* Bright blue, similar to lightning bolt glow */
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #1A1A4D; /* Slightly lighter dark blue */
+  --color-secondary-foreground: #FFFFFF;
+
+  --color-muted: #333366; /* Muted dark blue */
+  --color-muted-foreground: #CCCCCC; /* Light gray for muted text */
+
+  --color-accent: #0088FF; /* Bright blue for accents */
+  --color-accent-foreground: #FFFFFF;
+
+  --color-destructive: #FF4444; /* Standard red for destructive actions */
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: #0055AA; /* Medium blue for borders, subtle glow */
+  --color-input: #001144; /* Darker blue for inputs */
+  --color-ring: #0088FF; /* Bright blue for focus rings */
+
+  --color-chart-1: #0088FF;
+  --color-chart-2: #00BBFF;
+  --color-chart-3: #00DDFF;
+  --color-chart-4: #00FFFF;
+  --color-chart-5: #33FFFF;
+
+  --color-sidebar: #000022; /* Even darker blue for sidebar */
+  --color-sidebar-foreground: #FFFFFF;
+  --color-sidebar-primary: #0088FF;
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent: #003366;
+  --color-sidebar-accent-foreground: #FFFFFF;
+  --color-sidebar-border: #0055AA;
+  --color-sidebar-ring: #0088FF;
+
+  --radius-lg: 0rem;
+  --radius-md: 0rem;
+  --radius-sm: 0rem;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-body);
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: var(--radius-md);
+    --sidebar-background: var(--color-sidebar);
+    --sidebar-foreground: var(--color-sidebar-foreground);
+    --sidebar-primary: var(--color-sidebar-primary);
+    --sidebar-primary-foreground: var(--color-sidebar-primary-foreground);
+    --sidebar-accent: var(--color-sidebar-accent);
+    --sidebar-accent-foreground: var(--color-sidebar-accent-foreground);
+    --sidebar-border: var(--color-sidebar-border);
+    --sidebar-ring: var(--color-sidebar-ring);
+  }
+
+  /* No dark mode defined as per reference image */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  .container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
